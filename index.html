@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCFS CPU Scheduling Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CPU Scheduling Simulator</h1>
+            <button id="themeToggle" class="theme-toggle">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+        </div>
+        <div class="controls">
+            <label for="algorithm">Algorithm:</label>
+            <select id="algorithm">
+                <option value="fcfs">FCFS</option>
+                <option value="sjf">SJF</option>
+                <option value="priority">Priority</option>
+                <option value="rr">Round Robin</option>
+            </select>
+            <label for="timeQuantum" id="timeQuantumLabel" style="display:none;">Time Quantum:</label>
+            <input type="number" id="timeQuantum" min="1" style="display:none;">
+        </div>
+        <form id="processForm">
+            <label for="numProcesses">Number of Processes:</label>
+            <input type="number" id="numProcesses" min="1" required>
+            <button type="button" id="generateInputs">Generate Inputs</button>
+            <button type="button" id="loadSample">Load Sample Data</button>
+        </form>
+        <div id="processInputs"></div>
+        <div class="buttons">
+            <button id="calculate">Calculate</button>
+            <button id="reset">Reset</button>
+        </div>
+        <div id="results"></div>
+        <div id="tooltip" class="tooltip"></div>
+        <svg id="ganttChart" width="800" height="300"></svg>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
